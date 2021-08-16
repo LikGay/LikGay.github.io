@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>www.calzonetastegood.com</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
@@ -11,52 +12,119 @@ body {
   margin: 0;
   font-family: Arial;
   font-size: 17px;
+  background-color:black;
 }
 
 #myVideo {
-  position: fixed;
+  position: relative;
   right: 0;
   bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+  z-index: -1;
+  width: 100% ;
+  height: auto;
 }
 
 .content {
-  position: fixed;
-  bottom: 0;
+  position: absolute;
+  bottom: 20%;
+  left:2%;
   background: rgba(0, 0, 0, 0.5);
   color: #f1f1f1;
   width: 100%;
-  padding: 10px 30px;
+  padding: 5px 5px;
 }
 
-#myBtn {
+#myBtn2 {
   width: 200px;
   font-size: 18px;
   padding: 10px;
   border: none;
-  background: #000;
-  color: #fff;
+  background: #ddd;
+  color: #000;
   cursor: pointer;
+  border-radius: 12px;
 }
 
-#myBtn:hover {
+#myBtn2:hover {
   background: #ddd;
   color: black;
 }
+
+#myBtn {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #2EE59D;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0 0 5px #2EF3FC,
+                0 0 20px #2EF3FC,
+                0 0 20px #2EF3FC,
+                0 0 30px #2EF3FC;
+  transition: all 1.5s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+#myBtn:focus {
+  background-color: #fff;
+  box-shadow: 0px 15px 20px rgba(229, 46, 118, 0.4);
+  color: #000;
+  transform: translateY(-7px);
+
+}
+
+
+
+
+/*
+<!-- responsive to mobile -->
+@media (min-aspect-ratio:16/9){
+  #myVideo{
+    width:100%;
+    height:auto;
+  }
+}
+
+@media (max-aspect-ratio:16/9){
+  #myVideo{
+    width:auto;
+    height:100%;
+  }
+}
+
+
+@media (max-width: 767px) {
+    #videoBG {
+        display: none;
+    }
+    body {
+        background: url('video/rick.jpg');
+        background-size: cover;
+    }
+}
+*/
+
 </style>
 </head>
+
 <body>
 
-<video autoplay muted loop id="myVideo">
+<video id="myVideo" autoplay loop>
   <source src="video/rick.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
+  Play it yourself : https://www.youtube.com/watch?v=dQw4w9WgXcQ
 </video>
 
 <div class="content">
-  <h1>Rick wanna eat together</h1>
-  <p>Calzone tastes <b>BETTER</b> after <i>rick-rolled</i> !</p>
-  <button id="myBtn" onclick="myFunction()">Pause</button>
+  <h1 id="rick_text" style="display: none">Rick wanna eat together</h1>
+  <p id="rick_text2" style="display: none">Calzone tastes <b>BETTER</b> after <i>rick-rolled</i> !</p>
+  <button id="myBtn" onclick="myFunction()">What?</button>
 </div>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -68,12 +136,16 @@ body {
 
   gtag('config', 'G-FRSDW783KT');
 </script>
-  
+
 <script>
 var video = document.getElementById("myVideo");
 var btn = document.getElementById("myBtn");
 
+var text = document.getElementById("rick_text");
+var text2 = document.getElementById("rick_text2");
+
 function myFunction() {
+  // play video
   if (video.paused) {
     video.play();
     btn.innerHTML = "Pause";
@@ -81,6 +153,18 @@ function myFunction() {
     video.pause();
     btn.innerHTML = "Play";
   }
+  // change text appearance
+
+  if (text.style.display !== "block") {
+    text.style.display = "block";
+  } /*else {
+    text.style.display = "none";
+  }*/
+  if (text2.style.display !== "block") {
+    text2.style.display = "block";
+  } /*else {
+    text2.style.display = "none";
+  }*/
 }
 </script>
 
