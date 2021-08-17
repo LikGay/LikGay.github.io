@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>www.calzonetastegood.com</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+  background-color:black;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  top: 20%;
+  z-index: -1;
+  width: 100% ;
+  height: auto;
+}
+
+.content {
+  position: absolute;
+  bottom: 20%;
+  left:2%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 5px 5px;
+}
+
+#myBtn2 {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #ddd;
+  color: #000;
+  cursor: pointer;
+  border-radius: 12px;
+  margin: 5 auto;
+  display: inline;
+}
+
+#myBtn2:hover {
+  background: #ddd;
+  color: black;
+}
+
+#myBtn {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #dfb220;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0 0 5px #2EE59D,
+                0 0 20px #2EE59D,
+                0 0 20px #2EE59D,
+                0 0 30px #2EE59D;
+  transition: all 1.5s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+#myBtn:focus {
+  background-color: #fff;
+  box-shadow: 0px 15px 20px rgba(229, 46, 118, 0.4);
+  color: #000;
+  transform: translateY(-7px);
+  margin: 5 auto;
+  display: inline;
+}
+
+h3 {
+  margin: 5 auto;
+}
+
+
+/*
+<!-- responsive to mobile -->
+@media (min-aspect-ratio:16/9){
+  #myVideo{
+    width:100%;
+    height:auto;
+  }
+}
+
+@media (max-aspect-ratio:16/9){
+  #myVideo{
+    width:auto;
+    height:100%;
+  }
+}
+
+
+@media (max-width: 767px) {
+    #videoBG {
+        display: none;
+    }
+    body {
+        background: url('video/rick.jpg');
+        background-size: cover;
+    }
+}
+*/
+
+</style>
+</head>
+
+<body>
+
+<video id="myVideo" autoplay>
+  <source src="video/rolled_720p.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+  Play it yourself : https://www.youtube.com/watch?v=dQw4w9WgXcQ
+</video>
+
+<div class="content">
+  <h3 id="rick_text2" style="display: none">Keep ROLLING! ROLLING! ROLLING! </h3>
+  <button id="myBtn" onclick="myFunction()">Again?</button>
+  <!-- <a href="#" class="next" id="myBtn2">Next &raquo;</a> -->
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FRSDW783KT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FRSDW783KT');
+</script>
+
+<script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+var text2 = document.getElementById("rick_text2");
+
+function myFunction() {
+  // play video
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+  // change text appearance
+
+  if (text2.style.display !== "block") {
+    text2.style.display = "block";
+  } /*else {
+    text2.style.display = "none";
+  }*/
+}
+
+function newPage(){
+
+}
+</script>
+
+</body>
+</html>

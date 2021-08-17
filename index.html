@@ -36,18 +36,24 @@ body {
 
 #myBtn2 {
   width: 200px;
+  height: 45px;
   font-size: 18px;
-  padding: 10px;
+  padding: 16px;
   border: none;
-  background: #ddd;
+  background: #00FF00;
   color: #000;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 45px;
+  margin: 10px 20px;
+  display: inline;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-align: center;
 }
 
+
 #myBtn2:hover {
-  background: #ddd;
-  color: black;
+
 }
 
 #myBtn {
@@ -59,27 +65,39 @@ body {
   letter-spacing: 2.5px;
   font-weight: 500;
   color: #000;
-  background-color: #2EE59D;
+  background-color: #dfb220;
   border: none;
   border-radius: 45px;
-  box-shadow: 0 0 5px #2EF3FC,
-                0 0 20px #2EF3FC,
-                0 0 20px #2EF3FC,
-                0 0 30px #2EF3FC;
+  box-shadow: 0 0 5px #2EE59D,
+                0 0 20px #2EE59D,
+                0 0 20px #2EE59D,
+                0 0 30px #2EE59D;
   transition: all 1.5s ease 0s;
   cursor: pointer;
   outline: none;
+  margin: 5 auto;
+  display: inline;
   }
 
 #myBtn:focus {
   background-color: #fff;
   box-shadow: 0px 15px 20px rgba(229, 46, 118, 0.4);
   color: #000;
-  transform: translateY(-7px);
-
+  /*transform: translateY(-7px);*/
 }
 
+#updated_text{
+  font-size: 500%;
+  color: green;
+  text-align: center;
+}
 
+#updated_text, #myBtn2{
+  padding: 10px 3px;
+  box-sizing: border-box;
+  margin: 5 auto;
+  display: inline;
+}
 
 
 /*
@@ -115,6 +133,10 @@ body {
 
 <body>
 
+<div>
+  <h1 id="updated_text" style="display: none">Updated !!!!!</h1>
+</div>
+
 <video id="myVideo" autoplay loop>
   <source src="video/rick.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
@@ -125,6 +147,7 @@ body {
   <h1 id="rick_text" style="display: none">Rick wanna eat together</h1>
   <p id="rick_text2" style="display: none">Calzone tastes <b>BETTER</b> after <i>rick-rolled</i> !</p>
   <button id="myBtn" onclick="myFunction()">What?</button>
+  <a href="rolled.html" class="next" id="myBtn2" style ="display: none">     Next &raquo;</a>
 </div>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -138,6 +161,19 @@ body {
 </script>
 
 <script>
+var t = setTimeout(popUp, 1500);
+
+function popUp(){
+  element = document.getElementById("updated_text");
+  element.style.display = "block" ;
+
+  btn2 = document.getElementById("myBtn2");
+  setTimeout ( () => {                      //interesting
+    btn2.style.display = "inline-block";
+  },1000);
+}
+
+
 var video = document.getElementById("myVideo");
 var btn = document.getElementById("myBtn");
 
@@ -165,7 +201,23 @@ function myFunction() {
   } /*else {
     text2.style.display = "none";
   }*/
+
+
+  /*setTimeout(nextBtn, 2000); */
 }
+
+/*
+var btn2 = document.getElementById("myBtn2");
+fucntion nextBtn(){
+  btn2.style.display = "block";
+}
+*/
+
+/*
+function newPage(){
+
+}
+*/
 </script>
 
 </body>
