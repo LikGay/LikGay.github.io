@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet">
+
+  <title>www.calzonetastegood.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+/* sectionview */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 40px;
+  font-family: "Montserrat";
+  scroll-behavior: smooth;
+}
+section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#sec-1 {
+  background-color: rgb(214, 228, 92);
+}
+#sec-2 {
+  background-color: #30D5C8;
+}
+.scroll-down {
+  height: 70px;
+  width: 40px;
+  border: 4px solid white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  bottom: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.scroll-down::before,
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  border: 3px solid white;
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-down 1s ease-in-out infinite;
+}
+.scroll-down::before {
+  top: 30%;
+  animation-delay: 0.3s;
+  /* animation: scroll-down 1s ease-in-out infinite; */
+}
+
+@keyframes scroll-down {
+  0% {
+    /* top:20%; */
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    top: 90%;
+    opacity: 0;
+  }
+}
+
+/* videobg */
+
+.color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: lightblue;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+
+.video-container {
+  position: absolute; /* this line relative to fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.video-container video {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.centerImg{
+  z-index: 2;
+  position: relative;
+  mix-blend-mode: screen;
+}
+
+.imgC{
+  display: block;
+  height: auto;
+  width: 70%;
+  max-width: 700px;
+
+  opacity: 1;
+  z-index: 3;
+
+  position:relative;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+h1{
+  text-align: center;
+  font-size: 15vw;
+  font-weight: bold;
+  position: relative;
+  text-shadow:
+    0.4vw 0.4vw 0 rgba(255,255,255, 0.7),
+  -0.2vw -0.2vw 0 rgba(255,255,255, 0.7),
+   0.2vw -0.2vw 0 rgba(255,255,255, 0.7),
+   -0.2vw 0.2vw 0 rgba(255,255,255, 0.7),
+    0.2vw 0.2vw 0 rgba(255,255,255, 0.7);
+
+  padding: 10px ;
+  width: 40%
+  background-color: white;
+  font-family: 'Crimson Text', serif;
+  mix-blend-mode:screen;
+}
+
+h2{
+  text-align: left;
+  font-size: 6vw;
+  font-weight: bold;
+  position: relative;
+  padding: 10px ;
+  width: 40%
+  background-color: white;
+  font-family: 'Crimson Text', serif;
+  mix-blend-mode:screen;
+}
+
+
+.container{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+<!-- moving up down -->
+
+.container h1{
+  z-index: 5;
+}
+  /* TODO: spawn calzone plate */
+  /* TODO: stack them all on a line */
+
+.flyingC {
+  max-width: 80%;
+  max-height: auto;
+  /*-webkit-animation: shimmy 3s;*/
+  /*animation: shimmy 3s;*/
+  animation-name: shimmy;
+  animation-duration: 3s;
+
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  animation-timing-function: linear;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  display: flex;
+  position: absolute;
+}
+  /*$calStack : "0px" "100px" "200px" */
+  /* TODO: SASS stack or mixin sass / less stack */
+/*  .firstC{
+
+  }
+  .secondC{
+
+  }
+  .thirdC{
+
+  }
+*/
+
+@-webkit-keyframes shimmy {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+}
+
+/*
+:root {
+  --endpt: 200px;
+}
+*/
+
+@keyframes shimmy {
+  0% {
+    -webkit-transform: translate(0, -300px);
+    transform: translate(0, -300px);
+  }
+  20%{
+    -webkit-transform: translate(0, -280px);
+    transform: translate(0, -280px);
+  }
+  50% {
+    -webkit-transform: translate(0, -50px);
+    transform: translate(0, -50px);
+  }
+  100% {
+    -webkit-transform: translate(0, 105%);
+    /*transform: translate(0, 200px )*/
+    /*transform: translate(0, calc(var(--endpt)) ); */ /* continue with js*/
+  }
+}
+
+
+/* slanted */
+
+.slanted {
+  font-size: 40px;
+
+  transform: rotate(-5deg)
+             skew(-5deg);
+  background-color: #ffc;
+}
+
+</style>
+</head>
+
+<body>
+  <section id="sec-1">
+    <div class="container">
+      <div class="video-container">
+        <div class="color-overlay"></div> <!-- TODO:  -->
+        <video autoplay loop muted>
+          <source src="video/galaxy_bg.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="centerImg">
+        <h1>Calzone Paradise</h1>
+        <img class="imgC" src="video/calzone.png" alt="Tasty"/>
+      </div>
+
+      <a href="#sec-2">
+        <div class="scroll-down"></div>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="sec-2">
+    <div class="container">
+
+      <h2 class="slanted">&nbsp;&nbsp;<em>This is</em> ... &nbsp; <br />
+        &emsp;&ensp;&ensp; <i><u><em>Cal-ZONE</em></u></i> &nbsp;</h2>
+      <img class="flyingC .firstC" id="1stCal" src="video/calzone.png" />
+
+      <img class="flyingC .secondC" id="2ndCal" src="video/calzone.png" />
+      <img class="flyingC .thirdC" id="3rdCal" src="video/calzone.png" />
+
+    </div>
+
+    <!--
+    <p>
+      <h2 class="slanted">&ensp;  This is ...... </h2>
+      <h2 class="slanted">Cal-ZONE&emsp;</h2>
+    </p>
+    -->
+
+
+  </section>
+
+<script>
+// TODO:  add back google tracker
+
+// calzone stack variable
+//var [firstC, secondC, thirdC, forthC] = [-200, -150, -100, -50]; //-50 to -200px
+//const docStyle = document.documentElement.style;
+
+//document.querySelectorAll('.flyingC.firstC').style.animation.shimmy.setProperty('--endpt','200px');
+//document.querySelectorAll('.flyingC.secondC').style.animation.shimmy.setProperty('--endpt','150px');
+//document.querySelectorAll('.flyingC.thirdC').style.setProperty('--endpt','100px');
+/*
+document.querySelector('.secondC').addEventListener('click', function() {
+   // set the left value dynamically
+   this.style.left = '40%';
+});
+*/
+
+// //////////////////////
+// // find animation rule, delete it and then add a new one, then put in the new animation
+// /////////////////////
+//
+//
+// search the CSSOM for a specific -webkit-keyframe rule
+// function findKeyframesRule(rule)
+//     {
+//         // gather all stylesheets into an array
+//         var ss = document.styleSheets;
+//
+//         // loop through the stylesheets
+//         for (var i = 0; i < ss.length; ++i) {
+//
+//             // loop through all the rules
+//             for (var j = 0; j < ss[i].cssRules.length; ++j) {
+//
+//                 // find the -webkit-keyframe rule whose name matches our passed over parameter and return that rule
+//                 if (ss[i].cssRules[j].type == window.CSSRule.KEYFRAMES_RULE && ss[i].cssRules[j].name == rule)
+//                     return ss[i].cssRules[j];
+//             }
+//         }
+//
+//         // rule not found
+//         return null;
+//     }
+//
+// // remove old keyframes and add new ones
+// function change(anim)
+//     {
+//         // find our -webkit-keyframe rule
+//         var keyframes = findKeyframesRule(anim);
+//
+//         // remove the existing 0% and 100% rules
+//         keyframes.deleteRule("100%");
+//
+//         // create new 0% and 100% rules with random numbers
+//         keyframes.appendRule("100% { -webkit-transform: translate(0px, 100px) }");
+//
+//
+//         // assign the animation to our element (which will cause the animation to run)
+//         document.getElementById('3rdCal').style.animation-name = anim ;
+//     }
+//
+// // begin the new animation process
+// function startChange()
+//     {
+//         // remove the old animation from our object
+//         document.getElementById('3rdCal').style.animation-name = "none";
+//
+//         // call the change method, which will update the keyframe animation
+//         setTimeout(function(){change("shimmy");}, 0);
+//     }
+//
+//
+// startChange();
+setTimeout ( function(){
+  document.getElementById("1stCal").animate([
+    // keyframes
+    { transform: 'translateY(-300px)' },
+    { transform: 'translateY(5%)' }
+  ], {
+    // timing options
+    duration: 2000,
+    iterations: 1,
+    fill: "forwards"
+  });
+},
+3000);
+
+setTimeout ( function(){
+  document.getElementById("2ndCal").animate([
+    // keyframes
+    { transform: 'translateY(-300px)' },
+    { transform: 'translateY(-95%)' }
+  ], {
+    // timing options
+    duration: 2000,
+    iterations: 1,
+    fill: "forwards"
+  });
+},
+5500);
+ // TODO: add onscroll retrigger
+
+</script>
+
+</body>
+</html>
